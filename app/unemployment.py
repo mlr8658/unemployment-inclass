@@ -1,7 +1,17 @@
 #unemployment
-from getpass import getpass
 
-API_KEY = getpass("Please input your AlphaVantage API Key: ")
+# instead of this method, we are going to set up an environment with the password instead
+#from getpass import getpass
+
+#API_KEY = getpass("Please input your AlphaVantage API Key: ")
+
+# now were using the .env file instead
+import os
+from dotenv import load_dotenv
+
+load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
+
+API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 
 import requests
